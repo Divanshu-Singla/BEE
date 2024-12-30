@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+    body{
+
+      margin: 0;
+      padding: 0;
+    }
+    .body-box {
+        background: url('f.png') no-repeat center center/cover;
+      font-family: "Times New Roman", Times, serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1c1b29;
+    }
+    .container { 
+    margin-top: 30px;
+    
+      display: flex;
+      width: 80%;
+      max-width: 900px;
+      background-color: rgba(43, 28, 57, 0.2) ;
+      color: #db3636;
+      box-shadow: 4px 4px 8px rgba(69, 68, 68, 0.2);
+      border-radius: 15px;
+      overflow: hidden;
+      flex-direction: row;
+          font-family: "Cinzel", serif;
+
+    }
+    .form-section { 
+        opacity: 1;
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .image-section {
+      flex: 1;
+      background: url('picka.png') no-repeat center center/cover ;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items:flex-end;
+      padding: 20px;
+      opacity: 0.9;
+    
+    }
+    .image-section p {
+    /* font-family: "Cinzel", serif; */
+      position: absolute;
+      background: rgba(158, 53, 239, 0.05);
+      padding: 10px 15px;
+      color: rgb(219, 131, 16);
+      border-radius: 8px;
+      font-size: 1.8em;
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 1px 1px 3px #656d0d;
+      font-family: "Cinzel", serif;
+
+
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #ecb180;
+    
+    }
+    .input-group input, select {
+      padding: 8px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background: #2c2a3b;
+      color: #fff;
+      font-family: "Cinzel", serif;
+
+    }
+    .input-group .gender-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    button {
+       font-family: "Cinzel", serif;
+
+      padding: 10px 15px;
+      background: #6c5fa7;
+      /* color: #fff;
+       */
+       color: #040404;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+      font-weight: 700;
+    }
+    button:hover {
+      background: #564d86;
+    }
+    .hidden {
+      display: none;
+    }
+    .copy p{
+      text-shadow: 1px 1px 3px #656d0d;
+      font-family: "Cinzel", serif;
+    }
+    /* .logo p{
+      text-shadow: 1px 1px 3px #656d0d;
+      font-family: "Cinzel", serif;
+      font-size: 1.5em;
+    } */
+  </style>
+</head>
+<body>
+  <div class="logo" style="display: flex; justify-content: space-around; background-color: #240224; position: absolute; top: 0; width: 100%; height: 70px;">            
+    <!-- <p style="color: rgb(219, 131, 16);">The Wakandian</span></p> -->
+     <img src="logo-removebg-preview.png">
+     <!-- <p style="color: rgb(219, 131, 16);">Login Form</p> -->
+
+ </div>
+  <div class="body-box">
+  <div class="container" id="box">
+    <div class="form-section" id="form-step-1">
+      <h2>Wakandian From : Part 1</h2>
+      <div class="input-group">
+        <label for="name">First Name</label>
+        <input type="text" id="firstname" placeholder="Enter your first name" pattern="[A-Za-z\s]+" required>
+      </div>
+      <div class="input-group">
+        <label for="name">Last Name</label>
+        <input type="text" id="lastname" placeholder="Enter your last name" pattern="[A-Za-z\s]+" required>
+      </div>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="birthdate">Birth Date</label>
+        <input type="date" id="birthdate" required>
+      </div>
+      <div class="buttons">
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </div>
+
+    <div class="form-section hidden" id="form-step-2">
+      <h2>Wakandian Form : Part 2</h2>
+      <div class="input-group">
+        <label>Gender</label>
+        <div class="gender-group">
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female" required> Female</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="contact">Contact</label>
+        <input type="tel" id="contact" placeholder="Enter contact number" required pattern="[0-9]{10}">
+      </div>
+      <div class="input-group">
+        <label for="citizenship">Citizenship</label>
+        <select id="citizenship" required>
+          <option value="">Select</option>
+          <option value="Indian">Indian</option>
+          <option value="Indian Overseas">Indian Overseas</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+      </div>
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm password" required>
+      </div>
+      <div class="buttons">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="submitForm()">Submit</button>
+      </div>
+    </div>
+
+    <div class="image-section">
+      <p>Welcome to Wakanda! <br>"A true leader rises for the sake of others."
+    </p>
+    </div>
+  </div>
+</div>
+<div class="copy" style="display: flex; justify-content: center; background-color: #120112; position: absolute; bottom: 0; width: 100%;">            
+   <p style="color: rgb(219, 131, 16);">Copyright &copy;2024; Designed by DIVANSHU</p>
+</div>
+
+  <script>
+    function nextStep() {
+      document.getElementById('box').style.flexDirection = "row-reverse";
+      document.getElementById('form-step-1').classList.add('hidden');
+      document.getElementById('form-step-2').classList.remove('hidden');
+    }
+
+    function prevStep() {
+        document.getElementById('box').style.flexDirection = "row";
+      document.getElementById('form-step-2').classList.add('hidden');
+      document.getElementById('form-step-1').classList.remove('hidden');
+    }
+
+    function submitForm() {
+    const firstname = document.getElementById('firstname').value.trim();
+    const lastname = document.getElementById('lastname').value.trim();
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    const birthdate = document.getElementById('birthdate').value.trim();
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const citizenship = document.getElementById('citizenship').value;
+    const password = document.getElementById('password').value.trim();
+    const confirmPassword = document.getElementById('confirm-password').value.trim();
+
+    if (!firstname || !lastname || !username || !email || !contact || !birthdate || !gender || !citizenship || !password || !confirmPassword) {
+      alert("All fields are mandatory!");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Invalid email format!");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(contact)) {
+      alert("Contact number must be 10 digits!");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    const userData = {
+      firstname,
+      lastname,
+      username,
+      email,
+      contact,
+      birthdate,
+      gender: gender.value,
+      citizenship,
+      password,
+    };
+
+    localStorage.setItem('user', JSON.stringify(userData));
+    alert("Registration successful!");
+    location.reload();
+
+  }
+
+  
+  </script>
+</body>
+</html>
